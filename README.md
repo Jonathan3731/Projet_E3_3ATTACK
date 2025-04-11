@@ -31,7 +31,7 @@ La démarche a suivi ces étapes :
 
   - Exploitation.
 
-## VM Metasploitable3 (sous Windows sur Virtual Box)
+## VM Metasploitable3 (sous Linux sur Virtual Box)
 ### Installation de la VM
 Installation de Vagrant pour déployer la VM :
 
@@ -182,6 +182,8 @@ Nous effectuons une analyse des ports ouverts sur la VM à l'aide de NMAP :
 
 ![image](https://github.com/user-attachments/assets/13fe08f3-965b-46e2-ba6a-ab85667edd86)
 
+#### Port 445 : Samba
+
 Nous trouvons la version du port "samba" à l'aide du scanner de la msfconsole, et une faille a pu être trouvé sur internet :
 
 ![image](https://github.com/user-attachments/assets/e90ccec6-0b5d-4cd4-b4e4-c6be77406fe4)
@@ -205,8 +207,46 @@ Enfin, nous avons stabilisé le shell avec python :
 
 ![image](https://github.com/user-attachments/assets/2d8c317e-e175-4199-9536-a1f38359167c)
 
+## VM Metasploitable3 (sous Windows sur Virtual Box)
 
+Après avoir trouvé l'IP de la machine cible, nous lançons un NMAP pour récupérer tous les ports ouverts :
 
+![image](https://github.com/user-attachments/assets/f5a5622a-74c8-4edc-b1e4-6d230410934e)
+
+#### Port 445 : Samba
+
+Nous commençons par le port 445 appartenant à samba, nous recherchons sa version à l'aide du scanner :
+
+![image](https://github.com/user-attachments/assets/b8d051ac-3d24-46c2-8b65-89d159fbf368)
+
+En recherchant sur Rapid7, nous avons trouvé une faille correspondant à notre version, nous exécutons donc l'exploit trouvé sur le site. Il faut tout d'abord indiquer les paramètres nécessaires à l'exécution qui sont le payload, le rhost et le lhost :
+
+![image](https://github.com/user-attachments/assets/f064eb98-61d0-4fa1-9878-0b84d1df11be)
+
+Nous arrivons bien à accéder à la machine avec Meterpreter puis, en entrant la commande shell, à accéder au shell de windows :
+
+![image](https://github.com/user-attachments/assets/c9b84b41-288b-4c40-87d4-f23faa658a59)
+![image](https://github.com/user-attachments/assets/c2bbd1f0-3e99-4706-881c-5e600f3cff1d)
+
+Nous avons les privilèges nécessaires pour créer ou supprimer des fichiers :
+
+![image](https://github.com/user-attachments/assets/0d25d156-5735-4531-ac30-1d6bff832efb)
+
+Enfin, nous avons crée un reverse shell chiffré vers la machine cible. Tout d'abord, il faut récupérer un payload pour créer le reverse shell chiffré en indiquant l'IP de la machine attaquante et le port ciblé :
+
+![image](https://github.com/user-attachments/assets/d02ee1c6-fd06-40f9-896d-838a24d20788)
+
+Ensuite, nous avons encoder le payload en base64 : 
+
+![image](https://github.com/user-attachments/assets/493c5f07-c318-4550-a0b0-0c4ebc475de0)
+
+Nous copions le payload encodé sur la machine cible (Windows) :
+
+![image](https://github.com/user-attachments/assets/a0b4cbdd-5771-460c-8808-d2c4e6ce453e)
+
+Enfin, nous écoutons le port 4444, indiqué dans le payload, qui permet d'avoir un reverse shell chiffré :
+
+![image](https://github.com/user-attachments/assets/62a57d0a-230a-4cb0-a4a7-4d981a434ece)
 
 ## Conclusion
 Ce projet a permis de mettre en application les connaissances en cybersécurité offensive à travers un test d’intrusion sur des machines volontairement vulnérables. Grâce à une démarche structurée, nous avons pu :
