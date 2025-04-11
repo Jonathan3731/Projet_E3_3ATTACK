@@ -1,5 +1,34 @@
 # Projet_E3_3ATTACK
 Rendu du TP Final du groupe composé de Tomy, Romain, Soulaymane et Jonathan.
+
+## Introduction
+Dans un contexte où les cybermenaces sont en constante évolution, la sécurité des systèmes d'information est devenue une priorité pour les organisations. Le pentest (penetration testing ou test d'intrusion) est une méthode proactive de cybersécurité qui consiste à simuler une attaque réelle sur un système, un réseau ou une application, dans le but d’identifier ses vulnérabilités avant qu’un véritable attaquant ne les exploite. L’objectif est de renforcer la sécurité globale en corrigeant les failles découvertes lors de ces tests. Dans ce cadre, plusieurs types d'équipes peuvent intervenir, chacune avec un rôle bien précis :
+
+- La Red Team représente les attaquants. Leur mission est d’utiliser des techniques offensives pour contourner les défenses et démontrer les failles existantes ;
+
+- La Blue Team incarne les défenseurs. Elle est chargée de détecter, bloquer et réagir aux tentatives d’intrusion ;
+
+- La Purple Team joue un rôle de coordination et de collaboration entre les deux. Elle permet de faire converger les efforts offensifs et défensifs pour améliorer les capacités de détection et de réponse.
+
+Ce rapport présente les étapes réalisées au cours du TP de pentest, en explorant différentes techniques d’exploitation et en adoptant une approche similaire à celle d’un attaquant dans un environnement contrôlé.
+
+🛠️ Méthodologie et outils utilisés
+Dans le cadre de ce test d’intrusion, plusieurs outils et techniques ont été employés, organisés selon une démarche offensive structurée :
+
+- Nmap : pour scanner les ports ouverts et identifier les services exposés ;
+
+- Metasploit : framework complet utilisé pour exploiter certaines failles ;
+
+- Searchsploit : pour rechercher des exploits localement en lien avec les services découverts.
+
+La démarche a suivi ces étapes :
+
+- Reconnaissance et collecte d’informations ;
+
+- Détection de vulnérabilités ;
+
+- Exploitation.
+
 ## VM Metasploitable3 (sous Windows sur Virtual Box)
 ### Installation de la VM
 Installation de Vagrant pour déployer la VM :
@@ -143,3 +172,13 @@ L'exploit a bien fonctionné :
 ![image](https://github.com/user-attachments/assets/9eb1c005-067b-453e-9fb6-af7affe671ed)
 
 
+## Conclusion
+Ce projet a permis de mettre en application les connaissances en cybersécurité offensive à travers un test d’intrusion sur des machines volontairement vulnérables. Grâce à une démarche structurée, nous avons pu :
+
+- Identifier les services exposés et analyser leur configuration ;
+
+- Exploiter différentes failles pour obtenir un accès non autorisé ;
+  
+- Évaluer l’impact de ces compromissions sur la sécurité globale du système.
+
+Cette expérience nous a permis de mieux comprendre le rôle crucial de la Red Team dans une stratégie de cybersécurité. Elle souligne également l’importance d’une défense proactive (Blue Team) et d’un travail collaboratif (Purple Team) pour améliorer en continu la posture de sécurité d’une organisation. Enfin, le rapport que nous avons produit pourra servir de base pour proposer des mesures correctives et durcir les systèmes de production, dans une démarche de sécurité « by design ».
