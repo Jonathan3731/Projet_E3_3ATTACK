@@ -173,14 +173,36 @@ L'exploit a bien fonctionné :
 
 ![image](https://github.com/user-attachments/assets/9eb1c005-067b-453e-9fb6-af7affe671ed)
 
-##ICECREAM
+## VM Icecream
+Nous lançons un NMAP sur le réseau pour trouver l'adresse IP machine cible :
+
+![image](https://github.com/user-attachments/assets/e082680e-cd34-420b-9ae9-dae35b5a0c73)
+
+Nous effectuons une analyse des ports ouverts sur la VM à l'aide de NMAP :
+
+![image](https://github.com/user-attachments/assets/13fe08f3-965b-46e2-ba6a-ab85667edd86)
+
+Nous trouvons la version du port "samba" à l'aide du scanner de la msfconsole, et une faille a pu être trouvé sur internet :
+
+![image](https://github.com/user-attachments/assets/e90ccec6-0b5d-4cd4-b4e4-c6be77406fe4)
+
+Nous exécutons une commande qui permet de savoir quels dossiers sont accessibles ou non :
 
 ![image](https://github.com/user-attachments/assets/a8996b32-fc05-4e22-b614-2c2937b76c96)
 ![image](https://github.com/user-attachments/assets/bb9b9acc-14a3-4eb1-8026-d5454ac371b0)
+
+La commande "smbclient" permet d'accéder au partage de fichier "Icecream", une fois dedans, nous avons upload un fichier php où nous avons indiqué l'ip de la machine attaquante et le port ciblé :
+
 ![image](https://github.com/user-attachments/assets/6e0e766b-9b89-4eba-8f1c-eb574b48f3cd)
-![image](https://github.com/user-attachments/assets/80a95a90-65cd-4c23-95e9-18150eec81b4)
+![image](https://github.com/user-attachments/assets/dcec29e2-acbd-483b-a584-d8e1a152247a)
+
+Une fois le fichier complété avec les bonnes informations, nous faisons un "nc lvp" qui va écouter port indiqué dans le fichier et en même temps il faut faire une reqûete via un navigateur internet vers l'ip de la cible avec comme chemin le fichier php précédemment rempli. Le fait d'écouter sur le port va permettre un accès vers le reverse shell :
+
 ![image](https://github.com/user-attachments/assets/1022138f-1948-4f93-9675-dccd40513d56)
 ![image](https://github.com/user-attachments/assets/85a3c1a7-be3e-4037-80d9-9dcaabb782ae)
+
+Enfin, nous avons stabilisé le shell avec python :
+
 ![image](https://github.com/user-attachments/assets/2d8c317e-e175-4199-9536-a1f38359167c)
 
 
