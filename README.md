@@ -173,6 +173,18 @@ L'exploit a bien fonctionné :
 
 ![image](https://github.com/user-attachments/assets/9eb1c005-067b-453e-9fb6-af7affe671ed)
 
+##ICECREAM
+
+![image](https://github.com/user-attachments/assets/a8996b32-fc05-4e22-b614-2c2937b76c96)
+![image](https://github.com/user-attachments/assets/bb9b9acc-14a3-4eb1-8026-d5454ac371b0)
+![image](https://github.com/user-attachments/assets/6e0e766b-9b89-4eba-8f1c-eb574b48f3cd)
+![image](https://github.com/user-attachments/assets/80a95a90-65cd-4c23-95e9-18150eec81b4)
+![image](https://github.com/user-attachments/assets/1022138f-1948-4f93-9675-dccd40513d56)
+![image](https://github.com/user-attachments/assets/85a3c1a7-be3e-4037-80d9-9dcaabb782ae)
+![image](https://github.com/user-attachments/assets/2d8c317e-e175-4199-9536-a1f38359167c)
+
+
+
 
 ## Conclusion
 Ce projet a permis de mettre en application les connaissances en cybersécurité offensive à travers un test d’intrusion sur des machines volontairement vulnérables. Grâce à une démarche structurée, nous avons pu :
