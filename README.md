@@ -64,6 +64,23 @@ Enfin, à l'aide de meterpreter nous téléchargeons les données du serveur FTP
 
 ![image](https://github.com/user-attachments/assets/5d43c0c3-3763-4b41-badd-1c8063c42542)
 
+#### Port 80 : HTTP
+
+En renseignant l'adresse ip de la cible suivi du port 80 nous arrivons sur le site WEB et nous pouvons voir plusieurs dossiers qui sont des différentes fonctionnalités du site :
+
+![image](https://github.com/user-attachments/assets/00f75f29-7c9b-4f61-9a94-e8ab2eac4865)
+
+Nous pouvons donc chercher des failles selon les fonctionnalités, nous commençons par "drupal" :
+
+![image](https://github.com/user-attachments/assets/6caf3d49-c445-499c-9740-83956098adbd)
+
+Nous décidons d'utiliser l'exploit 16 pour réaliser une injection SQL et nous arrivons à accéder à meterpreter sur la cible :
+
+![image](https://github.com/user-attachments/assets/e03d42b3-2f7b-413d-aecc-92337d327407)
+
+
+
+
 
 
 
