@@ -99,7 +99,7 @@ Enfin, à l'aide de meterpreter nous téléchargeons les données du serveur FTP
 
 #### Port 80 : HTTP Apache 2.4.7
 
-En renseignant l'adresse ip de la cible suivi du port 80 nous arrivons sur le site WEB et nous pouvons voir plusieurs dossiers qui sont des différentes fonctionnalités du site :
+En renseignant l'adresse ip de la cible suivi du port 80 nous arrivons sur le site WEB et nous pouvons voir plusieurs dossiers qui sont des fonctionnalités du site :
 
 ![image](https://github.com/user-attachments/assets/00f75f29-7c9b-4f61-9a94-e8ab2eac4865)
 
