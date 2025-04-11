@@ -28,6 +28,7 @@ Maintenant que l'ip est connu, nous pouvons faire un NMAP pour savoir quels sont
 
 ![image](https://github.com/user-attachments/assets/770acac0-b93f-4440-ba82-41596f540a3b)
 
+
 #### Port 21 : FTP
 Tout d'abord il faut trouver une faille par rapport à la version de FTP utilisée. Pour cela nous utilisons la commande "search" :
 ![image](https://github.com/user-attachments/assets/4c290393-74ad-4686-8812-dd9ad1e8c713)
@@ -64,7 +65,8 @@ Enfin, à l'aide de meterpreter nous téléchargeons les données du serveur FTP
 
 ![image](https://github.com/user-attachments/assets/5d43c0c3-3763-4b41-badd-1c8063c42542)
 
-#### Port 80 : HTTP
+
+#### Port 80 : HTTP Apache 2.4.7
 
 En renseignant l'adresse ip de la cible suivi du port 80 nous arrivons sur le site WEB et nous pouvons voir plusieurs dossiers qui sont des différentes fonctionnalités du site :
 
@@ -79,10 +81,65 @@ Nous décidons d'utiliser l'exploit 16 pour réaliser une injection SQL et nous 
 ![image](https://github.com/user-attachments/assets/e03d42b3-2f7b-413d-aecc-92337d327407)
 
 
+#### Port 22 : SSH
+
+Nous analysons la version de SSH utilisé :
+
+![image](https://github.com/user-attachments/assets/36f77fa6-f9ed-42b2-8683-0e8dd29ae30b)
+
+Nous recherchons une faille à l'aide de la commande "search" selon la version de SSH :
+
+![image](https://github.com/user-attachments/assets/991df993-2d04-4eb6-bcaf-3b1503c99c3a)
+![image](https://github.com/user-attachments/assets/91cd13f4-bdf2-44c5-b5a1-52fb118c4293)
+
+Nous utilisons l'exploit 61 et renseignons les paramètres nécessaires : 
+
+![image](https://github.com/user-attachments/assets/4ea95dec-760a-4086-8048-db8e472b10af)
+![image](https://github.com/user-attachments/assets/5d98c907-8bb5-4f01-ab71-625400a0d582)
+
+L'exploit a bien fonctionné car nous voyons les login de SSH :
+![image](https://github.com/user-attachments/assets/7b92b238-7f65-4389-86a9-83a4a2a62e4d)
 
 
+#### Port 6697 : IRCD
+
+Dans le NMAP fait auparavant, il y avait le port IRCD, nous recherchons donc des failles avec la commande "search" :
+
+![image](https://github.com/user-attachments/assets/9aab33ac-25ac-4594-96c1-af9b17f39e93)
+
+Nous utilisons donc la seule faille trouvée et indiquons les paramètres nécessaires : 
+
+![image](https://github.com/user-attachments/assets/6e720da6-089c-4d71-9f00-1fa8c2a6fb65)
+![image](https://github.com/user-attachments/assets/9140ee51-5afb-462f-97e7-4a87bd729464)
+
+L'exploit a bien fonctionné :
+![image](https://github.com/user-attachments/assets/2ae39de2-04f5-4e3a-b42d-aab339c19146)
 
 
+#### Port 8080 : HTTP Jetty 8.1.7
+
+Lors d'un nmap plus précis vers les ports 80 etc, nous voyons qu'il y a aussi le port 8080 qui est ouvert.
+
+![image](https://github.com/user-attachments/assets/8d6c0796-2585-443c-8991-db32a7873cee)
+
+Lorsque nous tentons d'accéder à au serveur WEB en indiquant l'adresse ip et le port 8080 nous arrivons sur cette page :
+
+![image](https://github.com/user-attachments/assets/cea97fd1-4336-419d-a25e-bae2e88094aa)
+
+En cliquant sur le lien, nous arrivons sur cette page : 
+
+![image](https://github.com/user-attachments/assets/93707124-1c54-4803-a0df-4e1404a431d9)
+
+Nous avons donc chercher des failles avec le nom affiché à l'écran :
+
+![image](https://github.com/user-attachments/assets/928c03e8-9605-4825-b67f-79920126a72a)
+
+Nous utilisons la seule faille disponible en indiquant les paramètres nécessaires à son fonctionnement :
+
+![image](https://github.com/user-attachments/assets/6e4e60ec-1d30-4a22-b1d6-7be596e09b29)
+
+L'exploit a bien fonctionné :
+
+![image](https://github.com/user-attachments/assets/9eb1c005-067b-453e-9fb6-af7affe671ed)
 
 
-## VM Icecream
