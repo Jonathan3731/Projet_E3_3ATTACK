@@ -196,7 +196,7 @@ La commande "smbclient" permet d'accéder au partage de fichier "Icecream", une 
 ![image](https://github.com/user-attachments/assets/6e0e766b-9b89-4eba-8f1c-eb574b48f3cd)
 ![image](https://github.com/user-attachments/assets/dcec29e2-acbd-483b-a584-d8e1a152247a)
 
-Une fois le fichier complété avec les bonnes informations, nous faisons un "nc lvp" qui va écouter port indiqué dans le fichier et en même temps il faut faire une reqûete via un navigateur internet vers l'ip de la cible avec comme chemin le fichier php précédemment rempli. Le fait d'écouter sur le port va permettre un accès vers le reverse shell :
+Une fois le fichier complété avec les bonnes informations, nous faisons un "nc lvp" qui va écouter le port indiqué dans le fichier et en même temps il faut faire une reqûete via un navigateur internet vers l'ip de la cible avec comme chemin le fichier php précédemment rempli. Le fait d'écouter sur le port va permettre un accès vers le reverse shell :
 
 ![image](https://github.com/user-attachments/assets/1022138f-1948-4f93-9675-dccd40513d56)
 ![image](https://github.com/user-attachments/assets/85a3c1a7-be3e-4037-80d9-9dcaabb782ae)
